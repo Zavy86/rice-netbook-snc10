@@ -42,11 +42,18 @@ read -r ANSWER
 echo ""
   
 if [ "$ANSWER" = "y" ] || [ "$ANSWER" = "Y" ]; then
+
   cd "$REPOSITORY"
-  git add .
-  git commit -m "$BACKUP"
-  git push
-  echo "$BACKUP completed, committed and pushed!"
+  
+  if [ -z "$(git status --porcelain)" ]; then
+    echo "$BACKUP completed, nothing to commit!"
+  else
+    git add .
+    git commit -m "$BACKUP"
+    git push
+    echo "$BACKUP completed, committed and pushed!"
+  fi
+
 else
   echo "$BACKUP completed but not committed!"
 fi
