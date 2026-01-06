@@ -1,0 +1,54 @@
+#!/bin/sh
+
+REPOSITORY="$HOME/rice"
+DESTINATION="$REPOSITORY/backup"
+SOURCES="
+$HOME/.profile
+$HOME/.config/foot/foot.ini
+$HOME/.config/sway/config
+$HOME/.config/sway/bar/bar.sh
+$HOME/.config/sway/bar/clock.sh
+$HOME/.config/sway/bar/battery.sh
+"
+
+echo ""
+echo "Rice Backup"
+echo ""
+echo "---------------------------"
+echo ""
+echo "Destination: $DESTINATION"
+echo ""
+echo "Sources: $SOURCES"
+echo "---------------------------"
+echo ""
+doas echo ""
+
+cpp() {
+  mkdir -p "$(dirname "$2")" && doas cp "$1" "$2" && doas chown -R $(id -un):$(id -gn) $2
+}
+
+for SOURCE in $SOURCES; do
+  echo "Copying: $SOURCE"
+  cpp $SOURCE $DESTINATION$SOURCE
+done
+
+BACKUP="Backup $(date +'%Y-%m-%d %H:%M:%S')"
+
+echo ""
+echo "---------------------------"
+echo ""
+printf "Generate and push a new commit? (y/n): "
+read -r ANSWER
+echo ""
+  
+if [ "$ANSWER" = "y" ] || [ "$ANSWER" = "Y" ]; then
+  cd "$REPOSITORY"
+  #git add .
+  #git commit -m "$BACKUP"
+  #git push
+  echo "$BACKUP completed, committed and pushed!"
+else
+  echo "$BACKUP completed but not committed!"
+fi
+
+echo ""
