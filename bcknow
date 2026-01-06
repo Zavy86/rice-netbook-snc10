@@ -43,9 +43,9 @@ echo ""
   
 if [ "$ANSWER" = "y" ] || [ "$ANSWER" = "Y" ]; then
   cd "$REPOSITORY"
-  #git add .
-  #git commit -m "$BACKUP"
-  #git push
+  git add .
+  git commit -m "$BACKUP"
+  git push
   echo "$BACKUP completed, committed and pushed!"
 else
   echo "$BACKUP completed but not committed!"
