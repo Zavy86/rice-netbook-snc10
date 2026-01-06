@@ -37,23 +37,23 @@ BACKUP="Backup $(date +'%Y-%m-%d %H:%M:%S')"
 echo ""
 echo "---------------------------"
 echo ""
+
+cd "$REPOSITORY"
+
+if [ -z "$(git status --porcelain)" ]; then
+  echo "$BACKUP completed, nothing to commit!"
+  exit 0
+fi
+
 printf "Generate and push a new commit? (y/n): "
 read -r ANSWER
 echo ""
   
 if [ "$ANSWER" = "y" ] || [ "$ANSWER" = "Y" ]; then
-
-  cd "$REPOSITORY"
-  
-  if [ -z "$(git status --porcelain)" ]; then
-    echo "$BACKUP completed, nothing to commit!"
-  else
-    git add .
-    git commit -m "$BACKUP"
-    git push
-    echo "$BACKUP completed, committed and pushed!"
-  fi
-
+  git add .
+  git commit -m "$BACKUP"
+  git push
+  echo "$BACKUP completed, committed and pushed!"
 else
   echo "$BACKUP completed but not committed!"
 fi
