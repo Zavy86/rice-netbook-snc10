@@ -6,6 +6,10 @@ if [ ! -d "/sys/class/power_supply/BAT1" ]; then
   exit 0
 fi
 
+START_TIMESTAMP=$1
+CURRENT_TIMESTAMP=$(date +%s)
+ELAPSED=$((CURRENT_TIMESTAMP - START_TIMESTAMP))
+
 STATUS=$(cat /sys/class/power_supply/BAT1/status)
 CAPACITY=$(cat /sys/class/power_supply/BAT1/capacity)
 
@@ -26,7 +30,7 @@ else
 fi
 
 SHOW_PERCENTAGE=false
-if [ "$STATUS" = "Charging" ] || [ "$CAPACITY" -lt 40 ]; then
+if [ "$STATUS" = "Charging" ] || [ "$CAPACITY" -lt 40 ] ||  [ "$ELAPSED" -lt 99 ]; then
   SHOW_PERCENTAGE=true
 fi
 

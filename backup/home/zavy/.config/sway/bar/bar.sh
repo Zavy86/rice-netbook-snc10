@@ -7,7 +7,7 @@ while true; do
 
   CLOCK=$($PLUGINS/clock.sh "$START_TIMESTAMP")
     
-  BATTERY=$($PLUGINS/battery.sh)
+  BATTERY=$($PLUGINS/battery.sh "$START_TIMESTAMP")
 
   echo "$BATTERY | $CLOCK"
     
