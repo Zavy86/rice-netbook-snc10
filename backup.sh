@@ -3,6 +3,7 @@
 REPOSITORY="$HOME/rice"
 DESTINATION="$REPOSITORY/backup"
 SOURCES="
+$HOME/.shrc
 $HOME/.profile
 $HOME/.config/foot/foot.ini
 $HOME/.config/sway/config
