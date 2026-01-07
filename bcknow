@@ -52,8 +52,11 @@ echo ""
   
 if [ "$ANSWER" = "y" ] || [ "$ANSWER" = "Y" ]; then
   git add .
+  echo ""
   git commit -m "$BACKUP"
+  echo ""
   git push
+  echo ""
   echo "$BACKUP completed, committed and pushed!"
   echo ""
 else
