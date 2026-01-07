@@ -1,7 +1,5 @@
-# start sway on tty1
-if [ "$(tty)" = "/dev/tty1" ]; then
-  exec dbus-run-session sway
-fi
+# load shell settings
+export ENV="$HOME/.shrc"
 
 # enable ssh agent and add my key
 if [ -z "$SSH_AUTH_SOCK" ]; then
@@ -9,6 +7,7 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
     ssh-add /home/zavy/.ssh/netbook.key
 fi
 
-# aliases
-alias la="ls -a"
-alias ll="ls -al"
+# start sway on tty1
+if [ "$(tty)" = "/dev/tty1" ]; then
+  exec dbus-run-session sway
+fi

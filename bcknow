@@ -24,7 +24,7 @@ echo ""
 doas echo ""
 
 cpp() {
-  mkdir -p "$(dirname "$2")" && doas cp "$1" "$2" && doas chown -R $(id -un):$(id -gn) $2
+  mkdir -p "$(dirname "$2")" && doas cp "$1" "$2" && doas chown -R $(id -un):$(id -gn) "$DESTINATION"
 }
 
 for SOURCE in $SOURCES; do
