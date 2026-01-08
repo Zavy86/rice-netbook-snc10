@@ -5,11 +5,13 @@ PLUGINS="/home/zavy/.config/sway/bar"
 
 while true; do
 
-  CLOCK=$($PLUGINS/clock.sh "$START_TIMESTAMP")
-    
   BATTERY=$($PLUGINS/battery.sh "$START_TIMESTAMP")
 
-  echo "$BATTERY | $CLOCK"
+  CLOCK=$($PLUGINS/clock.sh "$START_TIMESTAMP")
+  
+  WIFI=$($PLUGINS/wifi.sh "$START_TIMESTAMP")  
+
+  echo "$BATTERY | $WIFI | $CLOCK"
     
   sleep 15
 

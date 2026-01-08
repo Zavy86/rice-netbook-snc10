@@ -10,6 +10,7 @@ $HOME/.config/sway/config
 $HOME/.config/sway/bar/bar.sh
 $HOME/.config/sway/bar/clock.sh
 $HOME/.config/sway/bar/battery.sh
+$HOME/.config/sway/bar/wifi.sh
 "
 
 echo ""
