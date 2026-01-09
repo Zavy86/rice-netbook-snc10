@@ -5,6 +5,8 @@ DESTINATION="$REPOSITORY/backup"
 SOURCES="
 $HOME/.shrc
 $HOME/.profile
+$HOME/.ssh/config
+$HOME/.config/aichat/config.yaml
 $HOME/.config/foot/foot.ini
 $HOME/.config/sway/config
 $HOME/.config/sway/bar/bar.sh

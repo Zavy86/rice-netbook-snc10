@@ -1,0 +1,24 @@
+# see https://github.com/sigoden/aichat/blob/main/config.example.yaml
+
+model: github:gpt-4o
+clients:
+- type: openai-compatible
+  name: github
+  api_base: https://models.inference.ai.azure.com
+
+#model: gemini:gemini-2.5-flash
+#clients:
+#- type: gemini
+
+left_prompt: |- 
+  {color.reset}
+  {color.reset}
+  {color.reset}
+  {color.cyan}------------------------------------
+  {color.cyan}({?session {?agent {agent}>}{session}{?role /}}{!session {?agent {agent}>}}{role}{?rag @{rag}}{color.cyan}{?session )}{!session >} {color.blue}Ask > {color.reset}
+
+right_prompt: |-
+  {color.reset}
+  {color.purple}{?session {?consume_tokens {consume_tokens}({consume_percent}%)}{!consume_tokens {consume_tokens}}}
+  {color.reset}
+  {color.reset}
