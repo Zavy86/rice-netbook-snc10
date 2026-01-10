@@ -10,8 +10,11 @@ $HOME/.config/aichat/config.yaml
 $HOME/.config/foot/foot.ini
 $HOME/.config/sway/config
 $HOME/.config/sway/bar/bar.sh
-$HOME/.config/sway/bar/clock.sh
 $HOME/.config/sway/bar/battery.sh
+$HOME/.config/sway/bar/clock.sh
+$HOME/.config/sway/bar/cpu.sh
+$HOME/.config/sway/bar/ram.sh
+$HOME/.config/sway/bar/temperature.sh
 $HOME/.config/sway/bar/wifi.sh
 "
 

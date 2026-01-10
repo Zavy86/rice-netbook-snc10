@@ -258,6 +258,8 @@ output * bg ~/.config/sway/background.jpg fit
 # 
 # Custom bindings:
 #
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set -10%
 bindsym $mod+Shift+g exec foot aichat -s
 
 include /etc/sway/config.d/*

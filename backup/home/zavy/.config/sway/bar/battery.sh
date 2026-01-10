@@ -30,7 +30,7 @@ else
 fi
 
 SHOW_PERCENTAGE=false
-if [ "$STATUS" = "Charging" ] || [ "$CAPACITY" -lt 40 ] ||  [ "$ELAPSED" -lt 99 ]; then
+if [ "$STATUS" = "Charging" ] || [ "$CAPACITY" -lt 40 ] || [ "$ELAPSED" -lt 99 ]; then
   SHOW_PERCENTAGE=true
 fi
 

@@ -78,6 +78,9 @@ input type:keyboard {
 }
 
 
+install brightness control
+sudo apk add brightnessctl
+
 installazione aichat gemini
 wget https://github.com/sigoden/aichat/releases/download/v0.30.0/aichat-v0.30.0-i686-unknown-linux-musl.tar.gz
 tar -xf aichat*.tar.gz
@@ -87,3 +90,4 @@ add sway shortcut
 micro /home/username/.config/sway
 bindsym $mod+Shift+g exec foot aichat -s
 (-s mantiene la sessione di default si chiamerà temp)
+
